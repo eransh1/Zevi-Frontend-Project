@@ -46,3 +46,8 @@ color: #000000;
     margin-left: 0;
    } 
 }
+@media(max-width:490px){
+    .searchCont{
+   width: 70%;
+    }
+}

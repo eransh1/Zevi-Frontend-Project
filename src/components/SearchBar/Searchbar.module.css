@@ -40,3 +40,11 @@ color: rgba(0, 0, 0, 0.4);
     right: 1rem;
    } 
 }
+@media(max-width:490px){
+    .searchIcon{
+        right: 0rem;
+       } 
+       .inputSearch{
+        padding-left: 1rem;
+       }
+}
