@@ -6,8 +6,8 @@ const Dummy = () => {
     const [prod,setProd]=useState<DummyProductType[]>([])
     const[page,setPage]=useState(0)
     const[temp,setTemp]=useState(false)
-    console.log("temp",temp)
-    console.log("page",page)
+    // console.log("temp",temp)
+    // console.log("page",page)
 
     const fetchData=async()=>{
 if(temp){return}
@@ -30,7 +30,7 @@ fetchData()
 document.querySelector("#dummyCont")?.addEventListener("scroll",()=>{
     
     let obj=document.querySelector("#dummyCont") as HTMLElement | null
-    console.log("obj.scrollTop",obj?.scrollTop)
+    // console.log("obj.scrollTop",obj?.scrollTop)
     if(obj && Math.floor(obj?.scrollTop) === Math.floor(obj?.scrollHeight - obj?.offsetHeight))
 {console.log("reached end")
 if(!temp){

@@ -8,6 +8,7 @@ import {TbSquareRoundedChevronRightFilled} from "react-icons/tb"
 import { useDispatch } from 'react-redux'
 import { setProducts } from '../../redux/productsSlice'
 import { ProductsType } from '../../types/types'
+import productData from '../../components/Dummy/DummyDataForProducts'
 const Products = () => {
   const[isSearching,setIsSearching]=useState(false)
   const[dataToShow,setDataToShow]=useState<ProductsType[]>([])
@@ -23,8 +24,19 @@ useEffect(()=>{
         const res=await data.json()
         dispatch(setProducts(res))
         setDataToShow(res)
-    } catch (error:any) {
-        console.log("error",error.messages)
+    } catch (error:unknown) {
+      if (error instanceof Error) {
+        console.log("error", error.message);
+        
+        dispatch(setProducts(productData))
+        setDataToShow(productData)
+    } else {
+        console.log("error", error);
+        
+        dispatch(setProducts(productData))
+        setDataToShow(productData)
+    }
+        
     }
 }
 fetchTrendData()

@@ -15,7 +15,9 @@ let skeletonArray=new Array(4).fill(2)
 
 const ProductsCont = ({products,isExpanded,isSearching}:ProductsPropsType) => {
     const[favCont,setFavCont]=useState<number[]>([])
-console.log("isSearching",isSearching)
+// console.log("isSearching",isSearching)
+
+// HANDLE LIKE BUTTON CLICK
     const handleFavContClick=(id:number)=>{
         let tempFav=favCont
         if(tempFav.includes(id)){

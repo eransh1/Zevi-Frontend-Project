@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styles from "./Sidebar.module.css"
 import {MdKeyboardArrowDown} from "react-icons/md"
-import { useSelector } from 'react-redux'
+import {  useSelector } from 'react-redux'
 import a5 from "../../images/5.svg"
 import a4 from "../../images/4.svg"
 import a3 from "../../images/3.svg"
@@ -29,6 +29,7 @@ const ratingData=[
     {id:1,img:a1,value:"1"},
 ]
 const Sidebar = ({setDataToShow,isExpanded,setIsSearching}:SidebarPropsType) => {
+  
     const [uniqueCategory,setUniqueCategory]=useState<string[]>([])
     const products=useSelector((state:StoreDataType)=>state.products)
     const[isCatClick,setIsCatClick]=useState(true)
@@ -42,7 +43,9 @@ const Sidebar = ({setDataToShow,isExpanded,setIsSearching}:SidebarPropsType) => 
 
     //FILTER ON BASIS OF SEARCH
     useEffect(()=>{
-        if(searchData===""){setDataToShow(products)}
+        if(searchData===""){
+        setDataToShow(products) 
+        }
         if(searchData!==""){
           let timerId
           if(timerId){clearTimeout(timerId)}
@@ -57,9 +60,10 @@ const Sidebar = ({setDataToShow,isExpanded,setIsSearching}:SidebarPropsType) => 
         
           function handleSearch(){
             setIsSearching(true)
-            const newData=products.filter((data)=>{return data.title.toLowerCase().includes(searchData.toLowerCase())})
-            setDataToShow(newData)
-            setIsSearching(false)
+
+             let newData=products.filter((data)=>{return data.title.toLowerCase().includes(searchData.toLowerCase())})
+                setDataToShow(newData)
+                setIsSearching(false)    
         }
 
 

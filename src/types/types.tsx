@@ -10,7 +10,8 @@ export type ProductsType={
 
 export type StoreDataType={
     search:string,
-    products:ProductsType[]
+    products:ProductsType[],
+    finalProductToShow:ProductsType[]
 }
 
 export type DummyProductType={

@@ -1,8 +1,8 @@
-import React from 'react'
+
 import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home/Home'
 import Products from './pages/Products/Products'
-import Dummy from "./components/Dummy/Dummy"
+// import Dummy from "./components/Dummy/Dummy"
 
 const App = () => {
 
@@ -12,7 +12,7 @@ const App = () => {
     <Routes>
       <Route path='/' element={<Home/>}></Route>
       <Route path='/products' element={<Products/>}></Route>
-      <Route path='/dummy' element={<Dummy/>}></Route>
+      {/* <Route path='/dummy' element={<Dummy/>}></Route> */}
 
     </Routes>
    </>
