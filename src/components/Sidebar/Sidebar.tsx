@@ -236,6 +236,7 @@ if(filterData.category.length!==0&&filterData.price.length!==0&&filterData.ratin
         })
         // setUniqueCategory([...new Set(category)])
         setUniqueCategory(Array.from(new Set(category)));
+        
     },[products])
 
 
